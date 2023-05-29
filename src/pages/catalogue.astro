@@ -2,12 +2,41 @@
 import Layout from "../layouts/Layout.astro";
 import Container from "../components/container.astro";
 import Sectionhead from "../components/sectionhead.astro";
+import Card from "../components/Card.astro";
 ---
 
 <Layout title="catalogue">
     <main>
         <h1>---Catalogue---</h1>
-        <img src="pc3.jpeg" width="204px" />
-        <img src="pc2.jpg" width="204px" />
+        <section>
+            <div>
+                <div class="cards">
+                    <Card
+                        img_url="MLPC.webp"
+                        href="https://articulo.mercadolibre.com.ar/MLA-1139151849-computadora-pc-gamer-solarmax-amd-ryzen-5-5600g-16gb-480-ssd-_JM#is_advertising=true&position=2&search_layout=grid&type=pad&tracking_id=c992a9e4-1c62-4560-a18e-01336d8ab8b5&is_advertising=true&ad_domain=VQCATCORE_LST&ad_position=2&ad_click_id=MGMxNzYwOTUtZTNhMi00YTZlLWJhYTItZTM2ODFiMjg4ODUx"
+                        title="Computadora gamer"
+                        body="Computadora Pc Gamer Solarmax Amd Ryzen 5 5600g 16gb 480 Ssd"
+                    />
+                    <Card
+                        img_url="MLPC2.webp"
+                        href="https://articulo.mercadolibre.com.ar/MLA-1412077622-pc-gamer-armada-ryzen-5-4600g-12-nucleo-amd-ram-16gb-ssd-240-_JM#position=5&search_layout=grid&type=item&tracking_id=546079cc-4cf6-4a35-8984-e8a16944ec79&gid=1&pid=1"
+                        title="Computadora para juegos"
+                        body="Pc Gamer Armada Ryzen 5 4600g 12 Nucleo Amd Ram 16gb Ssd 240"
+                    />
+                </div>
+            </div>
+        </section>
     </main>
+
+    <style>
+        h1 {
+            color: #3a5f64;
+            font-size: 25px;
+        }
+        main {
+            margin: auto;
+            padding: 25px;
+            max-width: 60ch;
+        }
+    </style>
 </Layout>
