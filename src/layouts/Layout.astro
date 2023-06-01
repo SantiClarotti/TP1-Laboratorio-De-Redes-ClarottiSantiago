@@ -23,11 +23,6 @@ const { title } = Astro.props as Props;
 						<img src="pngwing.com.png" id="logo" width="35|px" /></a
 					>
 				</div>
-				<div id="menu" class="">
-					<a href="/" class="">Home</a>
-					<a href="/catalogue" class="">Catalogue</a>
-					<a href="/component" class="">Components</a>
-				</div>
 				<div id="burguer" class="">
 					<button class="relative group">
 						<div
@@ -52,6 +47,11 @@ const { title } = Astro.props as Props;
 						</div>
 					</button>
 				</div>
+				<div id="menu" class="">
+					<a href="/" class="">Home</a>
+					<a href="/catalogue" class="">Catalogue</a>
+					<a href="/component" class="">Components</a>
+				</div>
 			</nav>
 		</header>
 		<slot />
@@ -64,23 +64,53 @@ const { title } = Astro.props as Props;
 		align-items: center;
 		padding: 26px;
 		background-color: #1089b1;
+		flex-wrap: wrap;
 	}
 	#menu {
+		display: none;
+		width: 100%;
 		margin: 6px;
+		flex-direction: column;
 		font-weight: bold;
 		font-family: Arial, Helvetica, sans-serif;
-		display: flex;
+
 		gap: 25px;
 	}
 
-	@media (max-width: 768px) {
-		#menu {
-			display: none;
-		}
-	}
 	@media (min-width: 768px) {
+		#menu {
+			display: flex;
+		}
 		#burguer {
 			display: none;
 		}
 	}
 </style>
+
+<script is:inline>
+	const burguer = document.getElementById("burguer");
+	const menu = document.getElementById("menu");
+	console.log(menu.style);
+	function burgerClick() {
+		const menu = document.getElementById("menu");
+		console.log("entro");
+		if (menu.style.display === "") {
+			console.log("nada");
+			menu.style.display = "flex";
+		} else {
+			console.log("flex");
+			menu.style.display = "none";
+		}
+	}
+	burguer.addEventListener("Click", function () {
+		const menu = document.getElementById("menu");
+		console.log("entro");
+		if (menu.style.display === "none") {
+			console.log("nada");
+			menu.style.display = "flex";
+		} else {
+			console.log("flex");
+			menu.style.display = "none";
+		}
+	});
+</script>
